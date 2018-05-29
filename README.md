@@ -10,10 +10,10 @@ node index.js ~/your_project_folder/templates/your_html_file.html
 # your_html_file.html => your_html_file.tpl.html, your_html_file.json, your_html_file.html
 ```
 ## History
-I worked on a company project that're used AngularJS with component based and front-end editing concepts.
+I worked on a company project that used AngularJS with component based and front-end editing concepts.
 In order to simplify the whole development process, I need a tool to extract the layout and data from a HTML file.
 I found an existing project called **canner-extract** (https://www.npmjs.com/package/canner-extract), but 
-it does not work in the nearly npm version which our team used. As a result, I spend some spare time to develop this 
+it does not work in the nearly npm version which our team used. As a result, I spend my spare time to develop this 
 mini tool. <br /><br />
 Thank you for the open source project - **cheerio** which helps me a lot for the core function of data extraction. :clap: :bow:
 
