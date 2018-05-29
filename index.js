@@ -3,6 +3,14 @@
 var cheerio = require('cheerio');
 var fs = require('fs');
 var htmlFile = process.argv[2];
+/*
+ * Customize here
+ */
+var config = {
+  tag: 'wf-data',
+  dataExt: '.json',
+  tplExt: '.tpl.html'
+};
 
 if (htmlFile) {
   if (fs.existsSync(htmlFile)) {
@@ -14,14 +22,15 @@ if (htmlFile) {
     //extract data from html and build a template
     var $ = cheerio.load(htmlRaw, {
       normalizeWhitespace: false,
-      xmlMode: true
+      xmlMode: true,
+      decodeEntities: false
     });
-    var dataGrids = $('wf-data'); //tag to be extracted
+    var dataGrids = $(config.tag); //tag to be extracted
     var sourcePathInfo = htmlFile.split('/');
     var sourceFileName = sourcePathInfo[sourcePathInfo.length - 1];
     sourcePathInfo.pop(); //remove the last element - filename
-    var exportJsonPath = sourcePathInfo.join('/') + '/' + sourceFileName.split('.')[0] + '.json';
-    var exportTemplatePath = sourcePathInfo.join('/') + '/' + sourceFileName.split('.')[0] + '.tpl.html';
+    var exportJsonPath = sourcePathInfo.join('/') + '/' + sourceFileName.split('.')[0] + config.dataExt;
+    var exportTemplatePath = sourcePathInfo.join('/') + '/' + sourceFileName.split('.')[0] + config.tplExt;
 
     // console.log(exportJsonPath);
     // console.log(exportTemplatePath);
@@ -30,14 +39,12 @@ if (htmlFile) {
     var exportTemplate = '';
 
     for (var idx = 0; idx < dataGrids.length; idx++) {
-      exportJSON.push($(dataGrids[idx]).text());
+      exportJSON.push($(dataGrids[idx]).html().replace(/\r\n\s*/g, '')); //extract the data and trim all the line break and whitespace
       $(dataGrids[idx]).attr('source-data', 'data'); //auto assign source data
       $(dataGrids[idx]).attr('context', 'data.content[' + idx + ']'); //auto assign index to data grid
-      $(dataGrids[idx]).text(''); //remove extracted text
+      $(dataGrids[idx]).html(''); //remove extracted text
     }
-    exportTemplate = $.html({
-      decodeEntities: false
-    });
+    exportTemplate = $.html();
 
     //write output
     fs.writeFileSync(exportJsonPath, JSON.stringify(exportJSON, null, "\t"));
