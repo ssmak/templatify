@@ -9,7 +9,8 @@
   "author": "Steve Mak",
   "license": "MIT",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.2"
+    "cheerio": "^1.0.0-rc.2",
+    "gulp": "^3.9.1"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1"
