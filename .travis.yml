@@ -1,6 +1,10 @@
-sudo: false
 language: node_js
 node_js:
+  - "stable"
+  - "unstable"
+  - "6"
+  - "4"
+  - "0.12"
   - "lts/*"
 cache:
   directories:
