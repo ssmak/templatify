@@ -22,7 +22,7 @@ gulp.task('test', ['clean'], () => {
       assert.fail('test file not exist.');
     } else {
       //check if layout and data are generated
-      if(fs.existsSync('test/test.tpl.html') && fs.existsSync('test/test.json')) {
+      if(fs.existsSync('test/tests.tpl.html') && fs.existsSync('test/test.json')) {
         //success
         assert.ok(true);
       } else {
