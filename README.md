@@ -2,6 +2,14 @@
 
 <h5 align="center">Extract layout + data from a HTML file.</h5>
 
+<div align="center">
+  <a href="http://travis-ci.org/ssmak/templatify">
+    <img src="https://travis-ci.org/ssmak/templatify.svg?branch=master" alt="Travis CI" />
+  </a>
+</div>
+
+<br />
+
 ``` bash
 git clone https://github.com/ssmak/templatify.git ~/myproject/utils/templatify.git
 cd ~/myproject/utils/templatify.git
