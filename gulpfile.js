@@ -3,5 +3,5 @@
 const gulp = require('gulp');
 
 gulp.task('test', [], () => {
-  console.log('hello!');
+  console.log(-1);
 });
