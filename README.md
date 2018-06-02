@@ -25,6 +25,12 @@ it does not work in the nearly npm version which our team used. As a result, I s
 mini tool. <br /><br />
 Thank you for the open source project - **cheerio** which helps me a lot for the core function of data extraction. :clap: :bow:
 
+<div align="center">
+  <a href="https://paypal.me/ssmak">
+    <img src="https://img.shields.io/badge/Donate-PayPal-green.svg" alt="PayPal Donation" />
+  </a>
+</div>
+
 ## Installation + Test
 1. Clone from GitHub (https://github.com/ssmak/templatify)
 ``` bash
