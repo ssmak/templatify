@@ -30,6 +30,9 @@ Thank you for the open source project - **cheerio** which helps me a lot for the
     <img src="https://img.shields.io/badge/Donate-PayPal-green.svg" alt="PayPal Donation" />
   </a>
 </div>
+<div align="right">
+   <img src="https://www.paypalobjects.com/webstatic/mktg/logo/AM_mc_vs_dc_ae.jpg" alt="PayPal" />
+</div>
 
 ## Installation + Test
 1. Clone from GitHub (https://github.com/ssmak/templatify)
